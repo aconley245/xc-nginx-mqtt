@@ -99,6 +99,7 @@ Temporary Items
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
 .ssh
+.kubeconfig
 
 # Gradle
 .idea/**/gradle.xml

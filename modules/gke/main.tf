@@ -50,3 +50,16 @@ resource "google_container_node_pool" "primary_nodes" {
     }
   }
 }
+
+module "gke_auth" {
+  source               = "terraform-google-modules/kubernetes-engine/google//modules/auth"
+  project_id           = var.gcp_project_id
+  cluster_name         = google_container_cluster.primary.name
+  location             = google_container_cluster.primary.location
+  use_private_endpoint = true
+}
+
+resource "local_file" "kubeconfig" {
+  content  = module.gke_auth.kubeconfig_raw
+  filename = "${path.module}/.kubeconfig"
+}

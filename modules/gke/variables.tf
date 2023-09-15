@@ -34,3 +34,8 @@ variable "project_id" {
   default = ""
   type = string
 }
+
+variable "gcp_project_id" {
+  description = "REQUIRED: GCP Project ID"
+  type = string
+}
