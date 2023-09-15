@@ -31,4 +31,5 @@ module "gke" {
   svc_range_name = var.svc_range_name
   gke_num_nodes = var.gke_num_nodes
   project_id = var.project_id
+  depends_on = [ module.gcp_vpc ]
 }
